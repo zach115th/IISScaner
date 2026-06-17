@@ -45,14 +45,14 @@ It’s built for **DFIR at scale** – think tens of thousands of log files and 
 Scan all IIS logs under a root directory and write hits to `WebAttackHits.csv`:
 
 ```powershell
-pwsh.exe -File .\IISScanner.ps1 `
+pwsh.exe -File .\IISScaner.ps1 `
   -RootPath "C:\inetpub\logs\LogFiles"
 ```
 
 ### Custom output path
 
 ```powershell
-pwsh.exe -File .\IISScanner.ps1 `
+pwsh.exe -File .\IISScaner.ps1 `
   -RootPath "C:\inetpub\logs\LogFiles" `
   -OutputCsv ".\iis_web_attacks.csv"
 ```
@@ -62,7 +62,7 @@ pwsh.exe -File .\IISScanner.ps1 `
 Use more runspaces to speed up scanning on multi-core systems:
 
 ```powershell
-pwsh.exe -File .\IISScanner.ps1 `
+pwsh.exe -File .\IISScaner.ps1 `
   -RootPath "C:\inetpub\logs\LogFiles" `
   -ThrottleLimit 24 `
   -OutputCsv ".\iis_web_attacks.csv"
@@ -80,7 +80,7 @@ Filter files by `LastWriteTime` to focus on a specific incident window.
 **Only logs modified on or after a date:**
 
 ```powershell
-pwsh.exe -File .\IISScanner.ps1 `
+pwsh.exe -File .\IISScaner.ps1 `
   -RootPath "C:\inetpub\logs\LogFiles" `
   -StartDate "2025-11-18"
 ```
@@ -88,7 +88,7 @@ pwsh.exe -File .\IISScanner.ps1 `
 **Specific time window:**
 
 ```powershell
-pwsh.exe -File .\IISScanner.ps1 `
+pwsh.exe -File .\IISScaner.ps1 `
   -RootPath "C:\inetpub\logs\LogFiles" `
   -StartDate "2025-11-18T00:00:00" `
   -EndDate   "2025-11-19T23:59:59" `
@@ -100,7 +100,7 @@ pwsh.exe -File .\IISScanner.ps1 `
 See which files are being scanned and how many remain after filters:
 
 ```powershell
-pwsh.exe -File .\IISScanner.ps1 `
+pwsh.exe -File .\IISScaner.ps1 `
   -RootPath "C:\inetpub\logs\LogFiles" `
   -ThrottleLimit 12 `
   -VerboseMode
