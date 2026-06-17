@@ -64,13 +64,13 @@ Use more runspaces to speed up scanning on multi-core systems:
 ```powershell
 pwsh.exe -File .\IISScaner.ps1 `
   -RootPath "C:\inetpub\logs\LogFiles" `
-  -ThrottleLimit 24 `
+  -ThrottleLimit 12 `
   -OutputCsv ".\iis_web_attacks.csv"
 ```
 
 > **Tip:**
 >
-> * On SSD/NVMe, a higher `ThrottleLimit` (e.g. 16–32) can help.
+> * On SSD/NVMe, a higher `ThrottleLimit` (e.g. 12-24) can help.
 > * On spinning disks or slow network shares, too many workers can cause I/O thrashing.
 
 ### Date-filtered scan
